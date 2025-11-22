@@ -2,6 +2,8 @@ import { Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home.jsx"
 import Projects from "./pages/Projects.jsx"
 import Agency from "./pages/Agency.jsx"
+import Stairs from "./components/loading/Stairs.jsx"
+
 
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
     <>
 
 
-
+    <Stairs />
 
     <Routes>
       <Route path="/" element={<Home/>} />
