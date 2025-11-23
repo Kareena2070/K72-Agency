@@ -28,9 +28,9 @@ function Agency() {
       scrollTrigger:{
         trigger: imageDiveRef.current,
         // markers:true,
-        start: "top 25%%",
-        end: "top -100% ",
-        scrub: true,
+        start: "top 25%",
+        end: "top -100%",
+        scrub: 1,
         pin: true,
         onUpdate: function(elem){
            let imageIndex;
@@ -47,7 +47,7 @@ function Agency() {
 
   return (
     <>
-      <div className="section1">
+      <div className="section1 relative py-1">
         <div ref={imageDiveRef} className="absolute top-60 left-[25vw] h-[20vw] w-[15vw] rounded-4xl overflow-hidden">
           <img ref={imgaeRef} className="h-full w-full object-cover" src="https://k72.ca/images/teamMembers/Carl_480x640.jpg?w=480&h=640&fit=crop&s=f0a84706bc91a6f505e8ad35f520f0b7" alt="" />
         </div>
@@ -64,7 +64,7 @@ function Agency() {
         </div>
       </div>
 
-      {/* <div className="section2 h-screen"></div> */}
+      <div className="section2 h-screen"></div>
     </>
 
   );

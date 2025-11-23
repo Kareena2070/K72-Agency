@@ -3,6 +3,7 @@ import Home from "./pages/Home.jsx"
 import Projects from "./pages/Projects.jsx"
 import Agency from "./pages/Agency.jsx"
 import Stairs from "./components/loading/Stairs.jsx"
+import Navigation from "./components/Navigation/Navigation.jsx"
 
 
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
 
-
+    <Navigation />
     <Stairs />
 
     <Routes>
