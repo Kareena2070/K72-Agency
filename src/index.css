@@ -10,4 +10,33 @@
     src: url(../public/fonts/Lausanne-500.woff2);
 }
 
+.moveX {
+    animation: moveAnimation 8s linear infinite;
+}
 
+.moveLink{
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.link-ani:hover .moveLink{
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes moveAnimation {
+    from {
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.menuCut1{
+     transition: all ease 0.5s;
+}
+.menuCut:hover .menuCut1{
+    background-color: #D3FD50;
+    transition: opacity 0.5s ease-in-out;
+}
