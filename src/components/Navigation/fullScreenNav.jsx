@@ -1,5 +1,13 @@
 
-function FullScreenNav() {
+import { useNavigate } from 'react-router-dom'
+
+function FullScreenNav({ onClose }) {
+    const navigate = useNavigate()
+    const goTo = (path) => {
+        if (onClose) onClose()
+        navigate(path)
+    }
+
     return (
         <>
             <div className="h-screen  w-full absolute bg-black text-white overflow-hidden ">
@@ -11,14 +19,17 @@ function FullScreenNav() {
                         </svg>
                     </div>
 
-                    <div className="menuCut h-30 w-20 relative">
+                    <div className="menuCut h-30 w-20 relative" onClick={onClose} role="button" aria-label="Close menu">
                         <div className="menuCut1 h-full w-1 absolute bg-white rotate-45 origin-right"></div>
                         <div className="menuCut1 h-full w-1 absolute bg-white -rotate-45 origin-left"></div>
                     </div>
                 </div>
 
                 <div className="py-10">
-                    <div className="link-ani border-t-1 relative ">
+                    <div className="link-ani border-t-1 relative " role="button" tabIndex={0}
+                        onClick={() => goTo('/projects')}
+                        onKeyDown={(e) => { if (e.key === 'Enter') goTo('/projects') }}
+                        aria-label="Open Projects">
                         <h1 className="font-[font2] text-[8vw] uppercase leading-[0.8] pt-10 text-center">Projects</h1>
                         <div className="moveLink absolute flex bg-[#D3FD50] text-black top-0">
                             <div className="moveX flex items-center">
@@ -36,7 +47,10 @@ function FullScreenNav() {
                         </div>
                     </div>
 
-                    <div className="link-ani border-t-1 relative ">
+                    <div className="link-ani border-t-1 relative " role="button" tabIndex={0}
+                        onClick={() => goTo('/agency')}
+                        onKeyDown={(e) => { if (e.key === 'Enter') goTo('/agency') }}
+                        aria-label="Open Agency">
                         <h1 className="font-[font2] text-[8vw] uppercase leading-[0.8] pt-10 text-center">AGENCE</h1>
                         <div className="moveLink absolute flex bg-[#D3FD50] text-black top-0">
                             <div className="moveX flex items-center">

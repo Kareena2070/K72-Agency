@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import FullScreenNav from "./fullScreenNav";
 
 function Navigation() {
 
     
     const navGreenRef = useRef(null)
+    const [isFullOpen, setIsFullOpen] = useState(false)
     
   return (
     <div className="z-4  flex fixed top-0 w-full items-start justify-between">
@@ -13,8 +15,7 @@ function Navigation() {
             </svg>     
         </div> 
 
-           <div onClick={()=>{
-            }} onMouseEnter={() => {
+           <div onClick={() => { setIsFullOpen(true) }} onMouseEnter={() => {
                 navGreenRef.current.style.height = '100%'
             }}
                 onMouseLeave={() => {
@@ -27,6 +28,9 @@ function Navigation() {
                     <div className="lg:w-10 w-6 h-0.5 bg-white"></div>
                 </div>
             </div>
+            {isFullOpen && (
+                <FullScreenNav onClose={() => setIsFullOpen(false)} />
+            )}
     </div>
   );
 }

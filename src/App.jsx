@@ -4,15 +4,18 @@ import Projects from "./pages/Projects.jsx"
 import Agency from "./pages/Agency.jsx"
 import Stairs from "./components/loading/Stairs.jsx"
 import Navigation from "./components/Navigation/Navigation.jsx"
+import FullScreenNav from "./components/Navigation/fullScreenNav.jsx"
+import { useState } from "react"
 
 
 
 function App() {
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-
+    {isMenuOpen && <FullScreenNav onClose={() => setIsMenuOpen(false)} />}
+      <Navigation onMenuOpen={() => setIsMenuOpen(true)} />
     <Navigation />
     <Stairs />
 

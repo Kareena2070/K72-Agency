@@ -29,7 +29,7 @@ function Agency() {
         trigger: imageDiveRef.current,
         // markers:true,
         start: "top 25%",
-        end: "top -100%",
+        end: "top -70%",
         scrub: 1,
         pin: true,
         onUpdate: function(elem){
